@@ -1,4 +1,4 @@
-package DRY
+package DRYio
 
 import (
 	"fmt"
