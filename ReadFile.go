@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-func ReadFile(S string) string {
+func ReadF(S string) string {
 
 	file, err := os.Open(S)
 	S = "" //очищаем S от данных, так как она используется далее
