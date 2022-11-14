@@ -1,3 +1,3 @@
-module github.com/Foggy-f/DRYio
+module DRYio
 
 go 1.19
