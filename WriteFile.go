@@ -7,20 +7,20 @@ import (
 	//"strings"
 )
 
-func WriteFi(S, InText string) string {
+func WriteF(S string, data []byte) int {
 
-	file, err := os.Open(S)
-	S = "" //очищаем S от данных, так как она используется далее
+	file, err := os.OpenFile(S, os.O_APPEND|os.O_WRONLY, 0644)
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
 	}
 	defer file.Close()
 
-	data := []byte(InText)
-	file.Write(data)
-	//склеиваем в одну строку
-	S = "ok"
+	//data := []byte(InText)
+	N, err := file.Write(data)
+	if err != nil {
+		fmt.Println(file, err)
+	}
 
-	return S
+	return N
 }
