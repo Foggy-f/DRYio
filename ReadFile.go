@@ -36,7 +36,7 @@ func ReadSlise(S string) []string {
 	return words
 }
 
-func WriteF(S, InText string) string {
+func WriteF(S, InText string) int {
 
 	file, err := os.Open(S)
 	S = "" //очищаем S от данных, так как она используется далее
@@ -47,9 +47,9 @@ func WriteF(S, InText string) string {
 	defer file.Close()
 
 	data := []byte(InText)
-	file.Write(data)
+	N, _ := file.Write(data)
 	//склеиваем в одну строку
-	S = "ok"
+	//S = "ok"
 
-	return S
+	return N
 }
