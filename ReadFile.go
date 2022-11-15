@@ -38,7 +38,7 @@ func ReadStrSlise(S string) []string {
 
 func WriteF(S string, data []byte) int {
 
-	file, err := os.Open(S)
+	file, err := os.OpenFile(S, os.O_APPEND|os.O_WRONLY, 0644)
 	S = "" //очищаем S от данных, так как она используется далее
 	if err != nil {
 		fmt.Println(err)
@@ -47,7 +47,10 @@ func WriteF(S string, data []byte) int {
 	defer file.Close()
 
 	//data := []byte(InText)
-	N, _ := file.Write(data)
+	N, err := file.Write(data)
+	if err != nil {
+		fmt.Println(file, err)
+	}
 	//склеиваем в одну строку
 	//S = "ok"
 
