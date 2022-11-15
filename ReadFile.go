@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-func ReadF(S string) string {
+func ReadString(S string) string {
 
 	file, err := os.Open(S)
 	S = "" //очищаем S от данных, так как она используется далее
@@ -29,14 +29,14 @@ func ReadF(S string) string {
 	return S
 }
 
-func ReadSlise(S string) []string {
+func ReadStrSlise(S string) []string {
 
-	words := strings.Fields(ReadF(S)) //преобразуем строку ,разделенную пробелами, в слайс
+	words := strings.Fields(ReadString(S)) //преобразуем строку ,разделенную пробелами, в слайс
 
 	return words
 }
 
-func WriteF(S, InText string) int {
+func WriteF(S string, data []byte) int {
 
 	file, err := os.Open(S)
 	S = "" //очищаем S от данных, так как она используется далее
@@ -46,7 +46,7 @@ func WriteF(S, InText string) int {
 	}
 	defer file.Close()
 
-	data := []byte(InText)
+	//data := []byte(InText)
 	N, _ := file.Write(data)
 	//склеиваем в одну строку
 	//S = "ok"
