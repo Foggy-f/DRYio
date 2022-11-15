@@ -28,6 +28,7 @@ func ReadF(S string) string {
 	}
 	return S
 }
+
 func ReadSlise(S string) []string {
 
 	words := strings.Fields(ReadF(S)) //преобразуем строку ,разделенную пробелами, в слайс
