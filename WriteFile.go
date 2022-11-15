@@ -7,7 +7,7 @@ import (
 	//"strings"
 )
 
-func WriteF(S, InText string) string {
+func WriteFi(S, InText string) string {
 
 	file, err := os.Open(S)
 	S = "" //очищаем S от данных, так как она используется далее
