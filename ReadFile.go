@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io"
 	"os"
+	"strings"
 )
 
 func ReadF(S string) string {
@@ -26,4 +27,10 @@ func ReadF(S string) string {
 		S = S + (string(data[:n]))
 	}
 	return S
+}
+func ReadSlise(S string) []string {
+
+	words := strings.Fields(ReadF(S)) //преобразуем строку ,разделенную пробелами, в слайс
+
+	return words
 }
