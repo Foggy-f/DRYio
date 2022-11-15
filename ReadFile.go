@@ -17,7 +17,7 @@ func ReadF(S string) []byte {
 	}
 	defer file.Close()
 
-	data := make([]byte, 5000)
+	data := make([]byte, 64)
 	B := data
 	for {
 		n, err := file.Read(data)
