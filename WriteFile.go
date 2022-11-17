@@ -27,7 +27,7 @@ func WriteF(S string, data []byte) int {
 
 func WriteNew(S string) string {
 
-	file, err := os.Create("empty.txt")
+	file, err := os.Create(S)
 
 	if err != nil {
 		fmt.Println(file, err)
