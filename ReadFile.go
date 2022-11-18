@@ -10,7 +10,7 @@ import (
 func ReadF(S string) []byte {
 
 	file, err := os.Open(S)
-	//очищаем S от данных, так как она используется далее
+
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
@@ -30,9 +30,9 @@ func ReadF(S string) []byte {
 	return B
 }
 func ReadString(S string) string {
-
+	var St string
 	file, err := os.Open(S)
-	S = "" //очищаем S от данных, так как она используется далее
+
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
@@ -46,9 +46,9 @@ func ReadString(S string) string {
 			break
 		}
 		//склеиваем в одну строку
-		S = S + (string(data[:n]))
+		St = St + (string(data[:n]))
 	}
-	return S
+	return St
 }
 
 func ReadStrSlise(S string) []string {
@@ -57,5 +57,3 @@ func ReadStrSlise(S string) []string {
 
 	return words
 }
-
-

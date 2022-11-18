@@ -2,9 +2,7 @@ package DRYio
 
 import (
 	"fmt"
-	//"io"
 	"os"
-	//"strings"
 )
 
 func WriteF(S string, data []byte) int {
