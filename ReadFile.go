@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-func ReadF(S string) []byte {
+func ReadByteSlise(S string) []byte {
 
 	file, err := os.Open(S)
 
@@ -17,8 +17,8 @@ func ReadF(S string) []byte {
 	}
 	defer file.Close()
 
-	data := make([]byte, 64)
-	B := data
+	data := make([]byte, 1)
+	B := []byte{}
 	for {
 		n, err := file.Read(data)
 		if err == io.EOF {
