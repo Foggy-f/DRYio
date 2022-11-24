@@ -6,7 +6,7 @@ import (
 	"os"
 	"strings"
 )
-
+//read byte slise
 func ReadByteSlise(S string) []byte {
 
 	file, err := os.Open(S)
